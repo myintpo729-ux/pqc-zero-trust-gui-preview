@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071326">
+  <meta name="description" content="GUI-only preview of an mTLS Military PQC Zero-Trust Overlay dashboard.">
+  <title>mTLS Military PQC Zero-Trust Overlay | GUI Preview</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="Dashboard home">
+      <span class="brand-mark">✦</span>
+      <span class="brand-copy"><b>PQC OVERLAY</b><small>SECURITY DASHBOARD</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a class="nav-link active" href="#overview"><span>⌂</span>Dashboard</a>
+      <a class="nav-link" href="#upload-section"><span>⇧</span>Secure Upload</a>
+      <a class="nav-link" href="#storage-section"><span>▤</span>Cloud Storage</a>
+      <a class="nav-link" href="#audit-section"><span>▣</span>Audit Logs</a>
+      <a class="nav-link" href="#about"><span>ⓘ</span>About Preview</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="shield">♙</div>
+      <b>Zero-Trust Security</b>
+      <small>PQC · ABAC · mTLS</small>
+      <span class="demo-label">STATIC GUI PREVIEW</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="hero" id="overview">
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="eyebrow">CLOUD-NATIVE SECURITY GATEWAY</div>
+        <h1>mTLS Military <span>PQC</span> Zero-Trust Overlay</h1>
+        <p>Bidirectional Proxy · Encryption at Rest &amp; In-Transit · mTLS · ABAC</p>
+      </div>
+      <div class="online-pill"><i></i><span><b>GUI Preview</b><small>Interface demonstration</small></span></div>
+    </header>
+
+    <section class="status-grid" aria-label="Security component overview">
+      <article class="status-card">
+        <div class="status-icon green">⬡</div><div><small>TRANSPORT SECURITY</small><b class="green-text">mTLS · TLS 1.3</b><p>Mutual certificate authentication</p></div>
+      </article>
+      <article class="status-card">
+        <div class="status-icon purple">⚛</div><div><small>CRYPTOGRAPHY</small><b class="purple-text">ML-KEM-768</b><p>Post-quantum key encapsulation</p></div>
+      </article>
+      <article class="status-card">
+        <div class="status-icon blue">♟</div><div><small>ACCESS CONTROL</small><b class="blue-text">ABAC Policy</b><p>Attribute-based authorization</p></div>
+      </article>
+    </section>
+
+    <section class="panel" id="upload-section">
+      <div class="panel-heading">
+        <div class="heading-icon">⇧</div>
+        <div><h2>Secure File Upload</h2><p>Evaluate access policy and apply PQC encryption · Write Path</p></div>
+      </div>
+      <div class="upload-layout">
+        <form id="demo-upload" class="upload-form">
+          <div class="form-grid two">
+            <label>Military Rank
+              <select id="rank"><option>Private</option><option>Sgt</option><option>Captain</option><option>Major</option><option>Lt.Col</option><option>Colonel</option></select>
+            </label>
+            <label>File Classification
+              <select id="classification"><option>Restricted</option><option>Confidential</option><option>Secret</option></select>
+            </label>
+          </div>
+          <div class="form-grid three">
+            <label>Client IP Address<input id="client-ip" value="192.168.10.50" autocomplete="off"></label>
+            <label>Deployment Location<select id="location"><option>Command-HQ</option><option>Frontline-Base</option></select></label>
+            <label>Device Type<select id="device"><option>Military-Terminal</option><option>Personal-Mobile</option></select></label>
+          </div>
+          <label>Select File
+            <input id="file-input" type="file">
+          </label>
+          <div id="selected-file" class="selected-file">No file selected</div>
+          <button class="primary-button" type="submit">⚡ &nbsp; Preview Upload Action</button>
+          <div id="demo-result" class="result" role="status" aria-live="polite" hidden></div>
+        </form>
+        <div class="security-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="lock">♢<span>✓</span></div>
+          <b>PROTECTED</b><small>ZERO-TRUST GATEWAY</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="storage-section">
+      <div class="panel-heading storage-heading">
+        <div class="heading-icon cyan">▤</div>
+        <div><h2>Encrypted Cloud Storage</h2><p>Stored objects · Read Path</p></div>
+        <span class="count">3 demo files</span>
+      </div>
+      <div class="file-list">
+        <div class="file-row"><span class="file-symbol">▧</span><code>mil_Private_Restricted_1762801200_report.enc</code><span class="file-tag">ENCRYPTED DEMO</span><button class="outline-button" type="button" data-demo-download>Preview</button></div>
+        <div class="file-row"><span class="file-symbol">▧</span><code>mil_Captain_Confidential_1762801400_plan.enc</code><span class="file-tag">ENCRYPTED DEMO</span><button class="outline-button" type="button" data-demo-download>Preview</button></div>
+        <div class="file-row"><span class="file-symbol">▧</span><code>mil_Major_Secret_1762801600_archive.enc</code><span class="file-tag">ENCRYPTED DEMO</span><button class="outline-button" type="button" data-demo-download>Preview</button></div>
+      </div>
+      <p class="section-note">These are sample file names for layout preview. They are not stored in MinIO.</p>
+    </section>
+
+    <section class="panel" id="audit-section">
+      <div class="panel-heading">
+        <div class="heading-icon purple-bg">▣</div>
+        <div><h2>Zero-Trust Audit Logs</h2><p>Example access and file-operation events</p></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Timestamp</th><th>Rank</th><th>Class</th><th>Device</th><th>Status</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td>2026-11-11 23:41:08</td><td>Private</td><td>Restricted</td><td>Military-Terminal</td><td><span class="status permitted">PERMITTED</span></td><td>Demo policy decision</td></tr>
+            <tr><td>2026-11-11 23:38:22</td><td>Captain</td><td>Confidential</td><td>Military-Terminal</td><td><span class="status permitted">PERMITTED</span></td><td>Demo policy decision</td></tr>
+            <tr><td>2026-11-11 23:35:49</td><td>Private</td><td>Secret</td><td>Personal-Mobile</td><td><span class="status denied">DENIED</span></td><td>Demo policy decision</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-note">Sample audit records are shown for visual demonstration only.</p>
+    </section>
+
+    <section class="about panel" id="about">
+      <b>GUI-only preview</b>
+      <p>This GitHub Pages version demonstrates the dashboard appearance only. It does not connect to the Go backend, MinIO, mTLS, ABAC, JWT, or PQC encryption.</p>
+    </section>
+    <footer>mTLS Military PQC Zero-Trust Overlay · GUI Design Preview</footer>
+  </main>
+  <script src="assets/app.js"></script>
+</body>
+</html>
